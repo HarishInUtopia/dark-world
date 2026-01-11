@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harish | Documentation of my Existence 📸</title>
-<meta name="description" content="Connect with me and share your feelings in my Dark Utopia.">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <meta name="description" content="Connect with me and share your feelings in my Dark Utopia.">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Sacramento&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
             /* Dark Utopia Palette */
-            --bg-top: #0f0c29; /* Midnight Blue */
-            --bg-mid: #302b63; /* Deep Purple */
-            --bg-bot: #24243e; /* Dark Night */
-            
-            --glass-dark: rgba(20, 20, 20, 0.65); /* Dark Glass */
+            --bg-top: #0f0c29;
+            /* Midnight Blue */
+            --bg-mid: #302b63;
+            /* Deep Purple */
+            --bg-bot: #24243e;
+            /* Dark Night */
+
+            --glass-dark: rgba(20, 20, 20, 0.65);
+            /* Dark Glass */
             --glass-border: rgba(255, 255, 255, 0.15);
-            
-            --text-main: #e0e0e0; /* Soft White */
+
+            --text-main: #e0e0e0;
+            /* Soft White */
             --text-muted: #b0b0b0;
-            
+
             --neon-pink: #ff0099;
             --neon-blue: #00f3ff;
             --neon-glow: 0 0 10px #ff0099, 0 0 20px #ff0099;
-            
+
             --whatsapp: #25D366;
         }
 
@@ -97,7 +104,10 @@
             box-shadow: 0 0 20px rgba(255, 0, 153, 0.4);
             transition: 0.3s;
         }
-        .enter-btn:hover { transform: scale(1.1); }
+
+        .enter-btn:hover {
+            transform: scale(1.1);
+        }
 
 
         /* --- BACKGROUND ANIMATION (Stars) --- */
@@ -121,9 +131,20 @@
         }
 
         @keyframes twinkle {
-            0% { opacity: 0.2; transform: translateY(0) scale(1); }
-            50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
-            100% { opacity: 0.2; transform: translateY(-40px) scale(1); }
+            0% {
+                opacity: 0.2;
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-20px) scale(1.2);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: translateY(-40px) scale(1);
+            }
         }
 
         /* --- LAYOUT --- */
@@ -150,7 +171,8 @@
             text-shadow: 0 0 10px rgba(255, 0, 153, 0.7);
         }
 
-        h2::before, h2::after {
+        h2::before,
+        h2::after {
             content: '✨';
             font-size: 1.2rem;
             vertical-align: middle;
@@ -215,14 +237,15 @@
             object-fit: cover;
             margin-bottom: 20px;
             background: #222;
-            
+
             /* The Aesthetic Filter: High Contrast, Slightly Dimmed, Pink Glow */
-            filter: grayscale(100%) blur(0.5px);
+            filter: grayscale(100%) blur(1px);
             transition: transform 0.5s ease;
         }
-        
+
         .profile-img:hover {
             transform: scale(1.05);
+            filter: grayscale(95%) blur(0);
         }
 
         .tagline {
@@ -273,7 +296,7 @@
             outline: none;
             margin-bottom: 15px;
         }
-        
+
         .journal-input:focus {
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 10px rgba(255, 0, 153, 0.3);
@@ -298,19 +321,21 @@
             transition: 0.3s;
         }
 
-        .journal-btn:hover { transform: scale(1.05); }
+        .journal-btn:hover {
+            transform: scale(1.05);
+        }
 
         .journal-display {
             margin-top: 20px;
             text-align: left;
             max-height: 200px;
             overflow-y: auto;
-            border-top: 1px dashed rgba(255,255,255,0.2);
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
             padding-top: 10px;
         }
 
         .entry-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -366,7 +391,7 @@
             border-radius: 10px;
             margin-bottom: 15px;
         }
-        
+
         .calc-btn {
             background: var(--neon-pink);
             color: white;
@@ -379,98 +404,246 @@
             transition: 0.3s;
             margin-top: 20px;
         }
-        .calc-btn:hover { transform: scale(1.05); }
 
-        #result-area { margin-top: 30px; min-height: 80px; }
-        .result-score { font-size: 4rem; font-weight: 800; color: var(--neon-pink); text-shadow: 0 0 20px rgba(255,0,153,0.5); display: block; }
-        .result-msg { font-size: 1.2rem; color: white; margin-top: 10px; display: block; }
-        .disclaimer { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); font-style: italic; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 15px; }
+        .calc-btn:hover {
+            transform: scale(1.05);
+        }
+
+        #result-area {
+            margin-top: 30px;
+            min-height: 80px;
+        }
+
+        .result-score {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px rgba(255, 0, 153, 0.5);
+            display: block;
+        }
+
+        .result-msg {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
 
         /* --- WHATSAPP & FOOTER --- */
         .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white; width: 65px; height: 65px; border-radius: 50%;
-            font-size: 32px; display: flex; align-items: center; justify-content: center;
-            text-decoration: none; box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); z-index: 100;
-            border: 2px solid white; transition: 0.3s;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            border: 2px solid white;
+            transition: 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
 
         .big-btn {
-            display: inline-block; background: transparent; color: white;
-            font-weight: 700; padding: 15px 40px; border-radius: 50px;
-            text-decoration: none; border: 2px solid var(--neon-pink);
-            box-shadow: 0 0 15px rgba(255, 0, 153, 0.3); margin-top: 20px; transition: 0.3s;
+            display: inline-block;
+            background: transparent;
+            color: white;
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 0, 153, 0.3);
+            margin-top: 20px;
+            transition: 0.3s;
         }
-        .big-btn:hover { background: var(--neon-pink); box-shadow: var(--neon-glow); }
 
-        footer { text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+        .big-btn:hover {
+            background: var(--neon-pink);
+            box-shadow: var(--neon-glow);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
 
         /* --- FOOTER STYLES --- */
-.utopia-footer {
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 80px;
-    /* Dark gradient fade */
-    background: linear-gradient(to top, rgba(15, 12, 41, 1), transparent);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    z-index: 10;
-}
+        .utopia-footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 80px;
+            /* Dark gradient fade */
+            background: linear-gradient(to top, rgba(15, 12, 41, 1), transparent);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 10;
+        }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-}
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
 
-.copyright-text {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 600;
-    letter-spacing: 1px;
-}
+        .copyright-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-.license-warning {
-    font-size: 0.85rem;
-    color: var(--neon-pink);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 800;
-    /* Gentle pulsing glow */
-    animation: glowText 2s infinite alternate;
-}
+        .license-warning {
+            font-size: 0.85rem;
+            color: var(--neon-pink);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            /* Gentle pulsing glow */
+            animation: glowText 2s infinite alternate;
+        }
 
-@keyframes glowText {
-    from { text-shadow: 0 0 5px rgba(255, 0, 153, 0.2); }
-    to { text-shadow: 0 0 15px rgba(255, 0, 153, 0.8); }
-}
+        @keyframes glowText {
+            from {
+                text-shadow: 0 0 5px rgba(255, 0, 153, 0.2);
+            }
 
-.funny-msg {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-style: italic;
-    transition: 0.3s ease;
-    max-width: 600px;
-}
+            to {
+                text-shadow: 0 0 15px rgba(255, 0, 153, 0.8);
+            }
+        }
 
-/* Hover effect: turns bright cyan */
-.utopia-footer:hover .funny-msg {
-    color: var(--neon-blue);
-    text-shadow: 0 0 5px var(--neon-blue);
-    opacity: 1;
-}
+        .funny-msg {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            transition: 0.3s ease;
+            max-width: 600px;
+        }
+
+        /* Hover effect: turns bright cyan */
+        .utopia-footer:hover .funny-msg {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+            opacity: 1;
+        }
+
+        /* --- MUSIC PLAYER STYLES --- */
+        .music-player-container {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .music-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 153, 0.2);
+        }
+
+        .music-btn:hover {
+            background: var(--neon-pink);
+            color: white;
+            box-shadow: 0 0 20px var(--neon-pink);
+            transform: scale(1.05);
+        }
+
+        /* Equalizer Animation (Bars moving) */
+        .equalizer {
+            display: flex;
+            gap: 3px;
+            height: 15px;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 3px;
+            background: currentColor;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        .bar:nth-child(1) {
+            animation-duration: 0.6s;
+            height: 6px;
+        }
+
+        .bar:nth-child(2) {
+            animation-duration: 0.8s;
+            height: 12px;
+        }
+
+        .bar:nth-child(3) {
+            animation-duration: 0.5s;
+            height: 8px;
+        }
+
+        .bar:nth-child(4) {
+            animation-duration: 0.7s;
+            height: 14px;
+        }
+
+        /* Pause animation when not playing */
+        .paused .bar {
+            animation-play-state: paused;
+            height: 3px !important;
+        }
 
         @media (max-width: 600px) {
-            h1 { font-size: 4rem; }
-            section { padding: 30px; margin: 30px 0; }
-            p { text-align: left; }
-            .profile-img { width: 200px; height: 200px; }
+            h1 {
+                font-size: 4rem;
+            }
+
+            section {
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            p {
+                text-align: left;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div id="welcome-modal">
@@ -485,88 +658,129 @@
     <div class="sky-container" id="stars-layer"></div>
 
     <div class="container">
-        
+
         <header>
-            <img src="img/Harish.jpg" alt="Harish" class="profile-img" onerror="this.src='https://api.dicebear.com/7.x/notionists/svg?seed=Harish&backgroundColor=ffdfbf'">
+            <img src="img/Harish.jpg" alt="Harish" class="profile-img"
+                onerror="this.src='https://api.dicebear.com/7.x/notionists/svg?seed=Harish&backgroundColor=ffdfbf'">
             <h1>Hi, I'm Harish</h1>
-            
+
             <h3 id="greeting-display"></h3>
 
             <div class="tagline">
                 <span id="typewriter"></span><span style="animation: blink 1s infinite">|</span>
+            </div>
+
+            <div class="music-player-container">
+                <audio id="my-audio" loop>
+                    <source src="music/Darkhaast.mp3" type="audio/mp3">
+                </audio>
+
+                <button class="music-btn" onclick="toggleMusic()">
+                    <div id="equalizer" class="equalizer paused">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <span id="music-text">Play My Vibe</span>
+                </button>
             </div>
         </header>
 
         <section class="reveal">
             <h2>About Me</h2>
             <p>
-                Hey, I’m Harish. I’m a bit delulu sometimes and secretly love utopias. I’m an <span class="highlight-text">altruist at heart</span>, always craving deep connections and meaningful bonds but I only want platonic friendships. 
+                Hey, I’m Harish. I’m a bit delulu sometimes and secretly love utopias. I’m an <span
+                    class="highlight-text">altruist at heart</span>, always craving deep connections and meaningful
+                bonds but I only want platonic friendships.
             </p>
             <p>
-                I value people who understand the importance of just being there for each other: laughing, sharing, and supporting without expecting anything in return. I’m 20 years old and currently learning philosophy, exploring life, ideas, and the ways we understand the world.
+                I value people who understand the importance of just being there for each other: laughing, sharing, and
+                supporting without expecting anything in return. I’m 20 years old and currently learning philosophy,
+                exploring life, ideas, and the ways we understand the world.
             </p>
         </section>
 
         <section class="reveal">
             <h2>My Life</h2>
             <p>
-                I’ve always felt a bit ugly and like I’m not supposed to exist, but somehow I’m here, carving my own path and trying to make sense of life. Life hasn’t always been easy, and I’ve had moments where I questioned if I even belonged. But through it all, I’ve learned to live intentionally, stay true to myself, and care deeply about the people around me.
+                I’ve always felt a bit ugly and like I’m not supposed to exist, but somehow I’m here, carving my own
+                path and trying to make sense of life. Life hasn’t always been easy, and I’ve had moments where I
+                questioned if I even belonged. But through it all, I’ve learned to live intentionally, stay true to
+                myself, and care deeply about the people around me.
             </p>
             <p>
-                I live by my own rules, regulations, and life policies little personal guidelines I follow to stay grounded, happy, and kind. These aren’t rigid they help me navigate life gently and honestly, protecting the connections I value. They guide me to observe before speaking, listen with my heart, give love without expecting anything back, and respect boundaries, distance, and personal space.
+                I live by my own rules, regulations, and life policies little personal guidelines I follow to stay
+                grounded, happy, and kind. These aren’t rigid they help me navigate life gently and honestly, protecting
+                the connections I value. They guide me to observe before speaking, listen with my heart, give love
+                without expecting anything back, and respect boundaries, distance, and personal space.
             </p>
         </section>
 
         <section class="reveal">
             <h2>Platonic Connections</h2>
             <p>
-                Friendships are one of life’s most precious things. I welcome anyone who wants to share, talk, or express their feelings you can trust me blindly, and I’ll never break that trust. For me, friendships aren’t just fun or passing time; they’re about trust, respect, and being fully present for someone, offering support and care without conditions.
+                Friendships are one of life’s most precious things. I welcome anyone who wants to share, talk, or
+                express their feelings you can trust me blindly, and I’ll never break that trust. For me, friendships
+                aren’t just fun or passing time; they’re about trust, respect, and being fully present for someone,
+                offering support and care without conditions.
             </p>
             <p>
-                I care deeply about others and believe life is richer when shared. I seek platonic connections that are real, supportive, and meaningful.
+                I care deeply about others and believe life is richer when shared. I seek platonic connections that are
+                real, supportive, and meaningful.
             </p>
         </section>
 
         <section class="reveal">
             <h2>My Philosophy</h2>
             <p>
-                I try to live intentionally every day: respecting my own boundaries, cherishing the bonds I form, and staying true to who I am, even if it doesn’t fit what the world expects. I embrace my quirks being delulu, idealistic, weird, and a little out of place because they’re part of who I am.
+                I try to live intentionally every day: respecting my own boundaries, cherishing the bonds I form, and
+                staying true to who I am, even if it doesn’t fit what the world expects. I embrace my quirks being
+                delulu, idealistic, weird, and a little out of place because they’re part of who I am.
             </p>
             <p>
-                I’ve built my own system for happiness, blending self-care, empathy, honesty, and simple life policies that help me navigate everything with purpose.
+                I’ve built my own system for happiness, blending self-care, empathy, honesty, and simple life policies
+                that help me navigate everything with purpose.
             </p>
         </section>
 
         <section class="reveal">
             <h2>Who I Am</h2>
             <p>
-                At the end of the day, I’m just me: a weird, thoughtful, delulu, altruistic person who wants authentic platonic connections, follows my own life policies, and tries to make life gentler, brighter, and more meaningful.
+                At the end of the day, I’m just me: a weird, thoughtful, delulu, altruistic person who wants authentic
+                platonic connections, follows my own life policies, and tries to make life gentler, brighter, and more
+                meaningful.
             </p>
             <p>
-                I welcome everyone who values trust, care, and honest bonds, and I’m always ready to listen, share, and connect.
+                I welcome everyone who values trust, care, and honest bonds, and I’m always ready to listen, share, and
+                connect.
             </p>
         </section>
 
         <section class="reveal">
             <h2>My Promise to You</h2>
             <p>
-                Because I live intentionally, I promise to <strong>observe before speaking</strong> and listen with my heart. I will love without expectation, forgive always, and be gentle. I will never force a relationship <span class="highlight-text">if it is forced, it isn't real.</span>
+                Because I live intentionally, I promise to <strong>observe before speaking</strong> and listen with my
+                heart. I will love without expectation, forgive always, and be gentle. I will never force a relationship
+                <span class="highlight-text">if it is forced, it isn't real.</span>
             </p>
             <p>
-                I respect distance, boundaries, and personal space. I will never make you feel small or guilty, and I will strictly avoid giving false hope. My goal is to protect my heart while sharing my soul in a safe, platonic space.
+                I respect distance, boundaries, and personal space. I will never make you feel small or guilty, and I
+                will strictly avoid giving false hope. My goal is to protect my heart while sharing my soul in a safe,
+                platonic space.
             </p>
         </section>
 
         <section class="reveal" style="text-align: center;">
             <h2>Cosmic Wisdom</h2>
             <p>Click a button to receive a thought from the universe.</p>
-            
+
             <div class="btn-group">
                 <button class="quote-btn" onclick="getQuote('philo')">🧠 Philosophical</button>
                 <button class="quote-btn" onclick="getQuote('emo')">💔 Emotional</button>
                 <button class="quote-btn" onclick="getQuote('happy')">☀️ Make Me Happy</button>
             </div>
-            
+
             <div id="quote-display">
                 "The unexamined life is not worth living."
             </div>
@@ -582,7 +796,7 @@
         <section class="reveal">
             <h2>🌑 The Moon Journal</h2>
             <p style="font-size: 0.9rem; text-align: center;">Write your thoughts. They stay in your browser.</p>
-            
+
             <select id="mood-selector" class="mood-select">
                 <option value="🌙">Mood: Thoughtful</option>
                 <option value="🌸">Mood: Happy</option>
@@ -590,16 +804,17 @@
                 <option value="🔮">Mood: Delulu</option>
                 <option value="😶">Mood: Empty</option>
             </select>
-            
+
             <textarea id="journal-text" class="journal-input" placeholder="Type what's on your heart..."></textarea>
-            
+
             <div style="text-align: center;">
                 <button class="journal-btn" onclick="saveEntry()">Save Memory</button>
-                <button class="journal-btn" style="background:transparent; border:1px solid #ff0099" onclick="clearJournal()">Clear All</button>
+                <button class="journal-btn" style="background:transparent; border:1px solid #ff0099"
+                    onclick="clearJournal()">Clear All</button>
             </div>
-            
+
             <div id="journal-entries" class="journal-display">
-                </div>
+            </div>
         </section>
 
         <section class="reveal" style="text-align: center;">
@@ -607,18 +822,19 @@
             <p style="font-size: 0.9rem; color: #b0b0b0;">
                 A consistent algorithm based on the cosmic value of names.
             </p>
-            
+
             <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
                 <input type="text" id="name1" class="love-input" placeholder="Your Name">
                 <input type="text" id="name2" class="love-input" placeholder="Their Name">
             </div>
-            
+
             <button class="calc-btn" onclick="calculateLove()">Calculate Bond</button>
-            
+
             <div id="result-area"></div>
 
             <p class="disclaimer">
-                <strong>Disclaimer:</strong> This algorithm is for entertainment only. Real connections are built on trust, care, and time—not by code or percentages. 💜
+                <strong>Disclaimer:</strong> This algorithm is for entertainment only. Real connections are built on
+                trust, care, and time—not by code or percentages. 💜
             </p>
         </section>
 
@@ -627,27 +843,28 @@
             <p style="text-align: center;">
                 If you resonate with my utopia, I am always ready to listen.
             </p>
-            
-            <a href="https://wa.me/919448760729?text=Hi%20Harish,%20I%20visited%20your%20Utopia!" class="big-btn" target="_blank">
+
+            <a href="https://wa.me/919448760729?text=Hi%20Harish,%20I%20visited%20your%20Utopia!" class="big-btn"
+                target="_blank">
                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
             </a>
         </section>
 
         <footer class="utopia-footer">
-    <div class="footer-content">
-        <p class="copyright-text">
-            &copy; 2026 Harish Urankar. All Rights Reserved.
-        </p>
-        
-        <p class="license-warning">
-            <i class="fas fa-lock"></i> Proprietary Code
-        </p>
-        
-        <p class="funny-msg">
-            Stealing this? I hope your phone charger only works at a specific angle. 🔌
-        </p>
-    </div>
-</footer>
+            <div class="footer-content">
+                <p class="copyright-text">
+                    &copy; 2026 Harish Urankar. All Rights Reserved.
+                </p>
+
+                <p class="license-warning">
+                    <i class="fas fa-lock"></i> Proprietary Code
+                </p>
+
+                <p class="funny-msg">
+                    Stealing this? I hope your phone charger only works at a specific angle. 🔌
+                </p>
+            </div>
+        </footer>
 
     </div>
 
@@ -661,12 +878,12 @@
             const name = document.getElementById('visitor-name').value.trim() || "Guest";
             const modal = document.getElementById('welcome-modal');
             const greetingDisplay = document.getElementById('greeting-display');
-            
+
             // Get current time for greeting
             const hour = new Date().getHours();
             let timeGreeting = "Welcome";
-            if(hour < 12) timeGreeting = "Good Morning";
-            else if(hour < 18) timeGreeting = "Good Afternoon";
+            if (hour < 12) timeGreeting = "Good Morning";
+            else if (hour < 18) timeGreeting = "Good Afternoon";
             else timeGreeting = "Good Evening";
 
             // Fade out modal
@@ -684,7 +901,7 @@
         function createStars() {
             const container = document.getElementById('stars-layer');
             const starCount = 80;
-            for(let i=0; i<starCount; i++) {
+            for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
                 const size = Math.random() * 3 + 1 + 'px';
@@ -714,7 +931,7 @@
             const n1 = document.getElementById('name1').value.trim().toLowerCase();
             const n2 = document.getElementById('name2').value.trim().toLowerCase();
             const resultArea = document.getElementById('result-area');
-            if(!n1 || !n2) {
+            if (!n1 || !n2) {
                 resultArea.innerHTML = "<span class='result-msg' style='color:#ff5555'>Please enter both names! ✨</span>";
                 return;
             }
@@ -728,9 +945,9 @@
             if (percentage < 10) percentage += 25;
             if (percentage > 100) percentage = 100;
             let message = "";
-            if(percentage > 85) message = "A cosmic connection! 🌌";
-            else if(percentage > 60) message = "A beautiful bond! ✨";
-            else if(percentage > 40) message = "Good potential! 🌱";
+            if (percentage > 85) message = "A cosmic connection! 🌌";
+            else if (percentage > 60) message = "A beautiful bond! ✨";
+            else if (percentage > 40) message = "Good potential! 🌱";
             else message = "Friendship comes first! 🤝";
             resultArea.innerHTML = `<span class="result-score">${percentage}%</span><span class="result-msg">${message}</span>`;
         }
@@ -739,7 +956,7 @@
         function generateEmoji() {
             const emojis = ["🌑", "🥀", "🔮", "🖤", "✨", "🕯️", "🌌", "🦋", "💿", "🧬", "💀", "💔", "🩹", "🗝️"];
             let result = "";
-            for(let i=0; i<4; i++) {
+            for (let i = 0; i < 4; i++) {
                 result += emojis[Math.floor(Math.random() * emojis.length)];
             }
             document.getElementById("emoji-result").innerText = result;
@@ -994,28 +1211,28 @@
         // 6. MOON JOURNAL (LocalStorage)
         function loadEntries() {
             const stored = localStorage.getItem('harishJournal');
-            if(stored) {
+            if (stored) {
                 document.getElementById('journal-entries').innerHTML = stored;
             }
         }
-        
+
         function saveEntry() {
             const txt = document.getElementById('journal-text').value;
             const mood = document.getElementById('mood-selector').value;
-            if(!txt) return;
-            
+            if (!txt) return;
+
             const date = new Date().toLocaleDateString();
             const newEntry = `<div class="entry-card"><strong>${date} ${mood}</strong><br>${txt}</div>`;
-            
+
             const container = document.getElementById('journal-entries');
             container.innerHTML = newEntry + container.innerHTML;
-            
+
             localStorage.setItem('harishJournal', container.innerHTML);
             document.getElementById('journal-text').value = "";
         }
 
         function clearJournal() {
-            if(confirm("Delete all journal memories?")) {
+            if (confirm("Delete all journal memories?")) {
                 localStorage.removeItem('harishJournal');
                 document.getElementById('journal-entries').innerHTML = "";
             }
@@ -1034,18 +1251,32 @@
             }
         }
 
+        // 8. MUSIC PLAYER LOGIC
+        function toggleMusic() {
+            const audio = document.getElementById("my-audio");
+            const equalizer = document.getElementById("equalizer");
+            const text = document.getElementById("music-text");
+
+            if (audio.paused) {
+                audio.play();
+                equalizer.classList.remove("paused");
+                text.innerText = "Vibing...";
+            } else {
+                audio.pause();
+                equalizer.classList.add("paused");
+                text.innerText = "Play My Vibe";
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             createStars();
             setTimeout(typeWriter, 1000);
             loadEntries(); // Load journal
             reveal();
         });
-        
+
         window.addEventListener("scroll", reveal);
     </script>
 </body>
 
 </html>
-
-
-

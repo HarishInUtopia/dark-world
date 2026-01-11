@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish | Utopia | About me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Dark Utopia Palette */
+            --bg-top: #0f0c29; /* Midnight Blue */
+            --bg-mid: #302b63; /* Deep Purple */
+            --bg-bot: #24243e; /* Dark Night */
+            
+            --glass-dark: rgba(20, 20, 20, 0.65); /* Dark Glass */
+            --glass-border: rgba(255, 255, 255, 0.15);
+            
+            --text-main: #e0e0e0; /* Soft White */
+            --text-muted: #b0b0b0;
+            
+            --neon-pink: #ff0099;
+            --neon-blue: #00f3ff;
+            --neon-glow: 0 0 10px #ff0099, 0 0 20px #ff0099;
+            
+            --whatsapp: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(180deg, var(--bg-top), var(--bg-mid), var(--bg-bot));
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 2;
+            min-height: 100vh;
+        }
+
+        /* --- WELCOME MODAL (New Feature) --- */
+        #welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f0c29;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease;
+        }
+
+        .modal-content h2 {
+            font-family: 'Sacramento', cursive;
+            font-size: 3.5rem;
+            color: var(--neon-pink);
+            text-shadow: 0 0 15px var(--neon-pink);
+            margin-bottom: 20px;
+        }
+
+        .name-input {
+            padding: 15px;
+            border-radius: 30px;
+            border: 2px solid var(--neon-blue);
+            background: transparent;
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+            outline: none;
+            width: 250px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .name-input:focus {
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        .enter-btn {
+            padding: 12px 40px;
+            border-radius: 30px;
+            background: var(--neon-pink);
+            color: white;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 0, 153, 0.4);
+            transition: 0.3s;
+        }
+        .enter-btn:hover { transform: scale(1.1); }
+
+
+        /* --- BACKGROUND ANIMATION (Stars) --- */
+        .sky-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+            100% { opacity: 0.2; transform: translateY(-40px) scale(1); }
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 5.5rem;
+            color: #fff;
+            text-shadow: var(--neon-glow);
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 0, 153, 0.7);
+        }
+
+        h2::before, h2::after {
+            content: '✨';
+            font-size: 1.2rem;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: var(--text-muted);
+        }
+
+        .highlight-text {
+            color: var(--neon-pink);
+            font-weight: 700;
+        }
+
+        /* --- DARK GLASS CARDS --- */
+        section {
+            background: var(--glass-dark);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 50px;
+            margin: 50px 0;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 0, 153, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 0, 153, 0.2);
+        }
+
+        /* --- HEADER --- */
+        header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* --- AESTHETIC IMAGE FILTER --- */
+        .profile-img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background: #222;
+            
+            /* The Aesthetic Filter: High Contrast, Slightly Dimmed, Pink Glow */
+            filter: contrast(1.15) brightness(1.1) saturate(1.1) drop-shadow(0 0 15px rgba(255, 0, 153, 0.6));
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .tagline {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 15px;
+        }
+
+        #greeting-display {
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            margin-top: 10px;
+            font-weight: 300;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        /* --- INTERACTIVE ELEMENTS (General) --- */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* --- JOURNAL STYLES --- */
+        .journal-input {
+            width: 100%;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--neon-pink);
+            border-radius: 15px;
+            padding: 15px;
+            color: white;
+            font-size: 1rem;
+            resize: none;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        
+        .journal-input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(255, 0, 153, 0.3);
+        }
+
+        .mood-select {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .journal-btn {
+            background: var(--neon-pink);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .journal-btn:hover { transform: scale(1.05); }
+
+        .journal-display {
+            margin-top: 20px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px dashed rgba(255,255,255,0.2);
+            padding-top: 10px;
+        }
+
+        .entry-card {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* --- QUOTE GENERATOR STYLES --- */
+        .quote-btn {
+            background: transparent;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .quote-btn:hover {
+            background: var(--neon-blue);
+            color: #000;
+        }
+
+        #quote-display {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            font-style: italic;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        /* --- EMOJI GENERATOR --- */
+        #emoji-result {
+            font-size: 3rem;
+            margin-top: 15px;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px white;
+        }
+
+        /* --- LOVE CALCULATOR --- */
+        .love-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-bottom: 2px solid var(--neon-pink);
+            padding: 15px;
+            color: white;
+            font-size: 1.2rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            outline: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .calc-btn {
+            background: var(--neon-pink);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: var(--neon-glow);
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .calc-btn:hover { transform: scale(1.05); }
+
+        #result-area { margin-top: 30px; min-height: 80px; }
+        .result-score { font-size: 4rem; font-weight: 800; color: var(--neon-pink); text-shadow: 0 0 20px rgba(255,0,153,0.5); display: block; }
+        .result-msg { font-size: 1.2rem; color: white; margin-top: 10px; display: block; }
+        .disclaimer { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); font-style: italic; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 15px; }
+
+        /* --- WHATSAPP & FOOTER --- */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white; width: 65px; height: 65px; border-radius: 50%;
+            font-size: 32px; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); z-index: 100;
+            border: 2px solid white; transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        .big-btn {
+            display: inline-block; background: transparent; color: white;
+            font-weight: 700; padding: 15px 40px; border-radius: 50px;
+            text-decoration: none; border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 0, 153, 0.3); margin-top: 20px; transition: 0.3s;
+        }
+        .big-btn:hover { background: var(--neon-pink); box-shadow: var(--neon-glow); }
+
+        footer { text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+
+        /* --- FOOTER STYLES --- */
+.utopia-footer {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 80px;
+    /* Dark gradient fade */
+    background: linear-gradient(to top, rgba(15, 12, 41, 1), transparent);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.copyright-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.license-warning {
+    font-size: 0.85rem;
+    color: var(--neon-pink);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    /* Gentle pulsing glow */
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 5px rgba(255, 0, 153, 0.2); }
+    to { text-shadow: 0 0 15px rgba(255, 0, 153, 0.8); }
+}
+
+.funny-msg {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    transition: 0.3s ease;
+    max-width: 600px;
+}
+
+/* Hover effect: turns bright cyan */
+.utopia-footer:hover .funny-msg {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+    opacity: 1;
+}
+
+        @media (max-width: 600px) {
+            h1 { font-size: 4rem; }
+            section { padding: 30px; margin: 30px 0; }
+            p { text-align: left; }
+            .profile-img { width: 200px; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-modal">
+        <div class="modal-content" style="text-align: center;">
+            <h2>Who are you, traveler?</h2>
+            <input type="text" id="visitor-name" class="name-input" placeholder="Enter your name" autocomplete="off">
+            <br>
+            <button class="enter-btn" onclick="enterSite()">Enter Utopia</button>
+        </div>
+    </div>
+
+    <div class="sky-container" id="stars-layer"></div>
+
+    <div class="container">
+        
+        <header>
+            <img src="img/Harish.jpg" alt="Harish" class="profile-img" onerror="this.src='https://api.dicebear.com/7.x/notionists/svg?seed=Harish&backgroundColor=ffdfbf'">
+            <h1>Hi, I'm Harish</h1>
+            
+            <h3 id="greeting-display"></h3>
+
+            <div class="tagline">
+                <span id="typewriter"></span><span style="animation: blink 1s infinite">|</span>
+            </div>
+        </header>
+
+        <section class="reveal">
+            <h2>About Me</h2>
+            <p>
+                Hey, I’m Harish. I’m a bit delulu sometimes and secretly love utopias. I’m an <span class="highlight-text">altruist at heart</span>, always craving deep connections and meaningful bonds but I only want platonic friendships. 
+            </p>
+            <p>
+                I value people who understand the importance of just being there for each other: laughing, sharing, and supporting without expecting anything in return. I’m 20 years old and currently learning philosophy, exploring life, ideas, and the ways we understand the world.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <h2>My Life</h2>
+            <p>
+                I’ve always felt a bit ugly and like I’m not supposed to exist, but somehow I’m here, carving my own path and trying to make sense of life. Life hasn’t always been easy, and I’ve had moments where I questioned if I even belonged. But through it all, I’ve learned to live intentionally, stay true to myself, and care deeply about the people around me.
+            </p>
+            <p>
+                I live by my own rules, regulations, and life policies little personal guidelines I follow to stay grounded, happy, and kind. These aren’t rigid they help me navigate life gently and honestly, protecting the connections I value. They guide me to observe before speaking, listen with my heart, give love without expecting anything back, and respect boundaries, distance, and personal space.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <h2>Platonic Connections</h2>
+            <p>
+                Friendships are one of life’s most precious things. I welcome anyone who wants to share, talk, or express their feelings you can trust me blindly, and I’ll never break that trust. For me, friendships aren’t just fun or passing time; they’re about trust, respect, and being fully present for someone, offering support and care without conditions.
+            </p>
+            <p>
+                I care deeply about others and believe life is richer when shared. I seek platonic connections that are real, supportive, and meaningful.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <h2>My Philosophy</h2>
+            <p>
+                I try to live intentionally every day: respecting my own boundaries, cherishing the bonds I form, and staying true to who I am, even if it doesn’t fit what the world expects. I embrace my quirks being delulu, idealistic, weird, and a little out of place—because they’re part of who I am.
+            </p>
+            <p>
+                I’ve built my own system for happiness, blending self-care, empathy, honesty, and simple life policies that help me navigate everything with purpose.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <h2>Who I Am</h2>
+            <p>
+                At the end of the day, I’m just me: a weird, thoughtful, delulu, altruistic person who wants authentic platonic connections, follows my own life policies, and tries to make life gentler, brighter, and more meaningful.
+            </p>
+            <p>
+                I welcome everyone who values trust, care, and honest bonds, and I’m always ready to listen, share, and connect.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <h2>My Promise to You</h2>
+            <p>
+                Because I live intentionally, I promise to <strong>observe before speaking</strong> and listen with my heart. I will love without expectation, forgive always, and be gentle. I will never force a relationship <span class="highlight-text">if it is forced, it isn't real.</span>
+            </p>
+            <p>
+                I respect distance, boundaries, and personal space. I will never make you feel small or guilty, and I will strictly avoid giving false hope. My goal is to protect my heart while sharing my soul in a safe, platonic space.
+            </p>
+        </section>
+
+        <section class="reveal" style="text-align: center;">
+            <h2>Cosmic Wisdom</h2>
+            <p>Click a button to receive a thought from the universe.</p>
+            
+            <div class="btn-group">
+                <button class="quote-btn" onclick="getQuote('philo')">🧠 Philosophical</button>
+                <button class="quote-btn" onclick="getQuote('emo')">💔 Emotional</button>
+                <button class="quote-btn" onclick="getQuote('happy')">☀️ Make Me Happy</button>
+            </div>
+            
+            <div id="quote-display">
+                "The unexamined life is not worth living."
+            </div>
+        </section>
+
+        <section class="reveal" style="text-align: center;">
+            <h2>Vibe Generator</h2>
+            <p>Generate a random aesthetic mood.</p>
+            <button class="journal-btn" onclick="generateEmoji()">✨ Generate Vibe ✨</button>
+            <div id="emoji-result">🌑🥀🔮🖤</div>
+        </section>
+
+        <section class="reveal">
+            <h2>🌑 The Moon Journal</h2>
+            <p style="font-size: 0.9rem; text-align: center;">Write your thoughts. They stay in your browser.</p>
+            
+            <select id="mood-selector" class="mood-select">
+                <option value="🌙">Mood: Thoughtful</option>
+                <option value="🌸">Mood: Happy</option>
+                <option value="🥀">Mood: Melancholy</option>
+                <option value="🔮">Mood: Delulu</option>
+                <option value="😶">Mood: Empty</option>
+            </select>
+            
+            <textarea id="journal-text" class="journal-input" placeholder="Type what's on your heart..."></textarea>
+            
+            <div style="text-align: center;">
+                <button class="journal-btn" onclick="saveEntry()">Save Memory</button>
+                <button class="journal-btn" style="background:transparent; border:1px solid #ff0099" onclick="clearJournal()">Clear All</button>
+            </div>
+            
+            <div id="journal-entries" class="journal-display">
+                </div>
+        </section>
+
+        <section class="reveal" style="text-align: center;">
+            <h2>💖 True Bond Calculator 💖</h2>
+            <p style="font-size: 0.9rem; color: #b0b0b0;">
+                A consistent algorithm based on the cosmic value of names.
+            </p>
+            
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+                <input type="text" id="name1" class="love-input" placeholder="Your Name">
+                <input type="text" id="name2" class="love-input" placeholder="Their Name">
+            </div>
+            
+            <button class="calc-btn" onclick="calculateLove()">Calculate Bond</button>
+            
+            <div id="result-area"></div>
+
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> This algorithm is for entertainment only. Real connections are built on trust, care, and time—not by code or percentages. 💜
+            </p>
+        </section>
+
+        <section class="reveal" style="text-align: center;">
+            <h2>Let's Connect?</h2>
+            <p style="text-align: center;">
+                If you resonate with my utopia, I am always ready to listen.
+            </p>
+            
+            <a href="https://wa.me/919448760729?text=Hi%20Harish,%20I%20visited%20your%20Utopia!" class="big-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </section>
+
+        <footer class="utopia-footer">
+    <div class="footer-content">
+        <p class="copyright-text">
+            &copy; 2026 Harish Urankar. All Rights Reserved.
+        </p>
+        
+        <p class="license-warning">
+            <i class="fas fa-lock"></i> Proprietary Code
+        </p>
+        
+        <p class="funny-msg">
+            Stealing this? I hope your phone charger only works at a specific angle. 🔌
+        </p>
+    </div>
+</footer>
+
+    </div>
+
+    <a href="https://wa.me/919448760729?text=Hi%20Harish!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // 0. VISITOR ENTRY LOGIC
+        function enterSite() {
+            const name = document.getElementById('visitor-name').value.trim() || "Guest";
+            const modal = document.getElementById('welcome-modal');
+            const greetingDisplay = document.getElementById('greeting-display');
+            
+            // Get current time for greeting
+            const hour = new Date().getHours();
+            let timeGreeting = "Welcome";
+            if(hour < 12) timeGreeting = "Good Morning";
+            else if(hour < 18) timeGreeting = "Good Afternoon";
+            else timeGreeting = "Good Evening";
+
+            // Fade out modal
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 800);
+
+            // Set dynamic greeting text
+            greetingDisplay.innerText = `${timeGreeting}, ${name}. Welcome to my world.`;
+            greetingDisplay.style.opacity = '1';
+        }
+
+        // 1. Star Background
+        function createStars() {
+            const container = document.getElementById('stars-layer');
+            const starCount = 80;
+            for(let i=0; i<starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = Math.random() * 3 + 1 + 'px';
+                star.style.width = size;
+                star.style.height = size;
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                container.appendChild(star);
+            }
+        }
+
+        // 2. Typewriter
+        const text = "🌑 A bit delulu & secretly loving dark utopias 🌑";
+        const typingElement = document.getElementById("typewriter");
+        let charIndex = 0;
+        function typeWriter() {
+            if (charIndex < text.length) {
+                typingElement.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 80);
+            }
+        }
+
+        // 3. Love Calculator (Consistent)
+        function calculateLove() {
+            const n1 = document.getElementById('name1').value.trim().toLowerCase();
+            const n2 = document.getElementById('name2').value.trim().toLowerCase();
+            const resultArea = document.getElementById('result-area');
+            if(!n1 || !n2) {
+                resultArea.innerHTML = "<span class='result-msg' style='color:#ff5555'>Please enter both names! ✨</span>";
+                return;
+            }
+            const sortedNames = [n1, n2].sort().join("");
+            let totalValue = 0;
+            for (let i = 0; i < sortedNames.length; i++) { totalValue += sortedNames.charCodeAt(i); }
+            const loveChars = "loves";
+            let bonus = 0;
+            for (let char of sortedNames) { if (loveChars.includes(char)) bonus += 5; }
+            let percentage = (totalValue * 37 + bonus) % 101;
+            if (percentage < 10) percentage += 25;
+            if (percentage > 100) percentage = 100;
+            let message = "";
+            if(percentage > 85) message = "A cosmic connection! 🌌";
+            else if(percentage > 60) message = "A beautiful bond! ✨";
+            else if(percentage > 40) message = "Good potential! 🌱";
+            else message = "Friendship comes first! 🤝";
+            resultArea.innerHTML = `<span class="result-score">${percentage}%</span><span class="result-msg">${message}</span>`;
+        }
+
+        // 4. EMOJI GENERATOR
+        function generateEmoji() {
+            const emojis = ["🌑", "🥀", "🔮", "🖤", "✨", "🕯️", "🌌", "🦋", "💿", "🧬", "💀", "💔", "🩹", "🗝️"];
+            let result = "";
+            for(let i=0; i<4; i++) {
+                result += emojis[Math.floor(Math.random() * emojis.length)];
+            }
+            document.getElementById("emoji-result").innerText = result;
+        }
+
+        // 5. QUOTE GENERATOR
+        const quotes = {
+            philo: [
+                "Questioning yourself is a sign that you are awake.",
+                "Comfort is pleasant, but growth hides outside it.",
+                "Silence is not empty; it is full of answers.",
+                "You don’t find yourself; you create yourself.",
+                "People fear loneliness and yet run from themselves.",
+                "Meaning is not discovered, it is built piece by piece.",
+                "Your thoughts are not you; they are visitors.",
+                "Nothing is permanent except change itself.",
+                "Time is the most honest judge, it reveals everything.",
+                "Truth is simple; the mind makes it complicated.",
+                "You are both the question and the answer.",
+                "Awareness hurts before it heals.",
+                "Not choosing is also a choice.",
+                "What you avoid shapes you more than what you chase.",
+                "Every belief is a cage if held too tightly.",
+                "The mind creates storms the world never made.",
+                "We live inside stories and call them reality.",
+                "Freedom begins when excuses end.",
+                "To know yourself, watch how you react, not what you say.",
+                "Peace is not found, it is practiced.",
+                "You can be full of people and still be empty of yourself.",
+                "The deepest conversations are often with your own mind.",
+                "Growth feels like breaking before it feels like becoming.",
+                "The world you see reflects the world within you.",
+                "Your future is built by daily habits, not distant dreams.",
+                "To understand others, first understand your wounds.",
+                "Wisdom begins with noticing patterns in your life.",
+                "You are temporary, so is your pain.",
+                "Sometimes the right path feels wrong because it is unfamiliar.",
+                "We suffer more from attachment than from absence.",
+                "Clarity arrives after chaos.",
+                "You teach people how to treat you by how you treat yourself.",
+                "Your mind can be heaven or prison using the same walls.",
+                "Letting go is a form of intelligence.",
+                "Loneliness teaches what company cannot.",
+                "A calm mind sees more truth than a loud one.",
+                "You cannot heal in the same environment that broke you.",
+                "Your values shape your reality.",
+                "Thinking is easy; understanding is hard.",
+                "Not everything unspoken is unsaid.",
+                "Change is painful until it becomes identity.",
+                "Life is an unanswered question learning to live with itself.",
+                "Most people listen to reply, not to understand.",
+                "You become what you repeatedly pay attention to.",
+                "You outgrow people the moment you outgrow your former self.",
+                "Your limits live mostly in your head.",
+                "The self is a process, not a fixed point.",
+                "You are the narrator of your suffering.",
+                "What you resist usually persists.",
+                "Meaning grows where responsibility is accepted.",
+                "Less is more.",
+                "Be here now.",
+                "This too shall pass.",
+                "Silence is an answer.",
+                "Trust the process.",
+                "Time heals all.",
+                "Change is good.",
+                "Keep it simple.",
+                "Focus on you.",
+                "Stay true to yourself.",
+                "Actions speak louder.",
+                "Life is a journey.",
+                "Learn to say no.",
+                "Quality over quantity.",
+                "Don't overthink it.",
+                "Peace begins within.",
+                "Knowledge is power.",
+                "Love is the answer.",
+                "The truth frees you.",
+                "Everything happens for a reason.",
+                "Stars need darkness to shine.",
+                "Live in the moment.",
+                "Be the change.",
+                "Simplicity is key.",
+                "Listen more, speak less.",
+                "Dream big, start small.",
+                "Life is short.",
+                "Forgive and forget.",
+                "Let it be.",
+                "Trust your gut.",
+                "Wisdom comes with time.",
+                "Create your own path.",
+                "Kindness is free.",
+                "Patience is a virtue.",
+                "Look inside yourself.",
+                "Balance is everything.",
+                "Nothing lasts forever.",
+                "Growth takes time.",
+                "Stay curious.",
+                "Be water, my friend."
+            ],
+            emo: [
+                "Some people feel like home even when they are gone.",
+                "Healing is not linear; some days are quiet collapses.",
+                "You can miss someone who never belonged to you.",
+                "Your heart gets tired before your smile does.",
+                "Sometimes you outgrow people quietly.",
+                "It hurts when you are not chosen, but it hurts more when you stop choosing yourself.",
+                "You can feel forgotten while still being remembered.",
+                "Crying doesn’t mean weakness; it means overflow.",
+                "Some memories feel warm and heavy at the same time.",
+                "Not everyone you care about will know how to care back.",
+                "You learned to stay strong because nobody stayed for your soft side.",
+                "Sometimes you just want to be understood without explaining anything.",
+                "You can be surrounded and still feel invisible.",
+                "The hardest goodbyes are the ones that never happened.",
+                "You stayed for people who would not have stayed for you.",
+                "Some smiles are practiced daily like survival rituals.",
+                "Your silence has chapters nobody has read.",
+                "You’re allowed to outgrow the version of you they loved.",
+                "Some bonds fade without fault, just time.",
+                "Your heart knows when something is wrong long before your mind admits it.",
+                "You became the strong person you once needed.",
+                "It hurts when people remember you only when they need something.",
+                "You can forgive and still feel the scar.",
+                "Some songs hurt because they remember for you.",
+                "You don’t always heal where you were broken.",
+                "Sometimes your heart says stay and your soul says leave.",
+                "You learned to comfort others while craving comfort yourself.",
+                "You deserved the honesty you gave.",
+                "Not every ending is loud; some just go quiet.",
+                "Your sensitivity is not a flaw; it is depth.",
+                "You are enough.",
+                "It's okay to cry.",
+                "Just breathe.",
+                "You are safe.",
+                "One day at a time.",
+                "Let it hurt, then let it go.",
+                "You are not alone.",
+                "Stay strong.",
+                "Your feelings matter.",
+                "Rest if you must.",
+                "Don't give up.",
+                "You are loved.",
+                "Heal at your own pace.",
+                "It's okay to not be okay.",
+                "Protect your peace.",
+                "Be gentle with yourself.",
+                "Your heart is gold.",
+                "Scars show you survived.",
+                "You matter.",
+                "Love yourself first.",
+                "Take a deep breath.",
+                "Storms don't last forever.",
+                "You are doing your best.",
+                "Forgive yourself.",
+                "Tomorrow is a new day.",
+                "Your vibe is unique.",
+                "Don't lose hope.",
+                "Feelings are not facts.",
+                "Trust your heart.",
+                "You are worthy.",
+                "Broken crayons still color.",
+                "Keep going.",
+                "Be kind to your mind.",
+                "Let go of fear.",
+                "You are stronger than you know.",
+                "Small steps count.",
+                "Embrace the messy parts.",
+                "You belong here.",
+                "Sending you love.",
+                "Peace is coming."
+            ],
+            happy: [
+                "Little moments count more than perfect plans.",
+                "Smiling at yourself is a good start to the day.",
+                "You don’t have to be perfect to be worthy.",
+                "Every sunrise is a new permission slip to begin again.",
+                "Small progress is still progress.",
+                "You have survived every bad day so far.",
+                "Some of the best days haven’t happened yet.",
+                "You are allowed to be proud of quiet victories.",
+                "Joy often lives in ordinary moments.",
+                "You are growing even when you don’t notice it.",
+                "Your presence matters more than you think.",
+                "It’s okay to rest without guilt.",
+                "You are not behind; you are on your timeline.",
+                "There are people you haven’t met yet who will love your energy.",
+                "You deserve peace without explanation.",
+                "Your laugh is proof life still moves.",
+                "Better days do not need permission to arrive.",
+                "Someone is grateful you exist, even if they never said it.",
+                "You are learning, unlearning, and becoming.",
+                "You are allowed to be happy for no reason.",
+                "Fresh starts can happen in the middle of any day.",
+                "You are more capable than your doubts claim.",
+                "Good things grow slowly; be patient with them.",
+                "Your softness is strength in disguise.",
+                "There is beauty in being yourself without editing.",
+                "You are allowed to choose light again and again.",
+                "Some miracles look like ordinary mornings.",
+                "You are not alone in how you feel.",
+                "Your story is still being written.",
+                "Hope is quiet but powerful.",
+                "Smile more.",
+                "Good vibes only.",
+                "Enjoy today.",
+                "You got this!",
+                "Choose joy.",
+                "Shine bright.",
+                "Laugh often.",
+                "Life is beautiful.",
+                "Be happy.",
+                "Do what you love.",
+                "Keep shining.",
+                "Stay positive.",
+                "Make today great.",
+                "Follow your bliss.",
+                "Look for the good.",
+                "Happiness looks good on you.",
+                "Dance it out.",
+                "Eat the cake.",
+                "Love this life.",
+                "Catch flights, not feelings.",
+                "Sun is out!",
+                "Positive mind, positive life.",
+                "Believe in magic.",
+                "You are a gem.",
+                "Sparkle every day.",
+                "Best day ever.",
+                "Keep smiling.",
+                "Radiate love.",
+                "Be a rainbow.",
+                "Stay wild.",
+                "Have fun.",
+                "Life is a gift.",
+                "Count your blessings.",
+                "Focus on the good.",
+                "Happy thoughts.",
+                "You are sunshine.",
+                "Spread love.",
+                "Make it happen.",
+                "Live, laugh, love.",
+                "Today is a gift."
+            ]
+        };
+
+        function getQuote(type) {
+            const list = quotes[type];
+            const random = list[Math.floor(Math.random() * list.length)];
+            document.getElementById("quote-display").innerText = `"${random}"`;
+        }
+
+        // 6. MOON JOURNAL (LocalStorage)
+        function loadEntries() {
+            const stored = localStorage.getItem('harishJournal');
+            if(stored) {
+                document.getElementById('journal-entries').innerHTML = stored;
+            }
+        }
+        
+        function saveEntry() {
+            const txt = document.getElementById('journal-text').value;
+            const mood = document.getElementById('mood-selector').value;
+            if(!txt) return;
+            
+            const date = new Date().toLocaleDateString();
+            const newEntry = `<div class="entry-card"><strong>${date} ${mood}</strong><br>${txt}</div>`;
+            
+            const container = document.getElementById('journal-entries');
+            container.innerHTML = newEntry + container.innerHTML;
+            
+            localStorage.setItem('harishJournal', container.innerHTML);
+            document.getElementById('journal-text').value = "";
+        }
+
+        function clearJournal() {
+            if(confirm("Delete all journal memories?")) {
+                localStorage.removeItem('harishJournal');
+                document.getElementById('journal-entries').innerHTML = "";
+            }
+        }
+
+        // 7. SCROLL REVEAL
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("visible");
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            setTimeout(typeWriter, 1000);
+            loadEntries(); // Load journal
+            reveal();
+        });
+        
+        window.addEventListener("scroll", reveal);
+    </script>
+</body>
+</html>

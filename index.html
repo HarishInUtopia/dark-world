@@ -14,18 +14,13 @@
         :root {
             /* Dark Utopia Palette */
             --bg-top: #0f0c29;
-            /* Midnight Blue */
             --bg-mid: #302b63;
-            /* Deep Purple */
             --bg-bot: #24243e;
-            /* Dark Night */
 
             --glass-dark: rgba(20, 20, 20, 0.65);
-            /* Dark Glass */
             --glass-border: rgba(255, 255, 255, 0.15);
 
             --text-main: #e0e0e0;
-            /* Soft White */
             --text-muted: #b0b0b0;
 
             --neon-pink: #ff0099;
@@ -50,7 +45,7 @@
             min-height: 100vh;
         }
 
-        /* --- WELCOME MODAL (New Feature) --- */
+        /* --- WELCOME MODAL --- */
         #welcome-modal {
             position: fixed;
             top: 0;
@@ -109,8 +104,7 @@
             transform: scale(1.1);
         }
 
-
-        /* --- BACKGROUND ANIMATION (Stars) --- */
+        /* --- BACKGROUND ANIMATION --- */
         .sky-container {
             position: fixed;
             top: 0;
@@ -131,20 +125,9 @@
         }
 
         @keyframes twinkle {
-            0% {
-                opacity: 0.2;
-                transform: translateY(0) scale(1);
-            }
-
-            50% {
-                opacity: 1;
-                transform: translateY(-20px) scale(1.2);
-            }
-
-            100% {
-                opacity: 0.2;
-                transform: translateY(-40px) scale(1);
-            }
+            0% { opacity: 0.2; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+            100% { opacity: 0.2; transform: translateY(-40px) scale(1); }
         }
 
         /* --- LAYOUT --- */
@@ -171,8 +154,7 @@
             text-shadow: 0 0 10px rgba(255, 0, 153, 0.7);
         }
 
-        h2::before,
-        h2::after {
+        h2::before, h2::after {
             content: '✨';
             font-size: 1.2rem;
             vertical-align: middle;
@@ -217,6 +199,66 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 0, 153, 0.2);
         }
 
+        /* --- POEM BOX STYLES --- */
+        .poem-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--neon-pink);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .poem-box:hover {
+            transform: scale(1.01);
+            border-left-color: var(--neon-blue);
+        }
+
+        .poem-text {
+            /* This property preserves line breaks you type in JS! */
+            white-space: pre-line; 
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .poem-sig {
+            display: block;
+            margin-top: 15px;
+            color: var(--neon-blue);
+            font-family: 'Sacramento', cursive;
+            font-size: 1.5rem;
+            text-align: right;
+        }
+
+        .meaning-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 10px;
+            border-bottom: 1px dotted var(--neon-pink);
+            transition: 0.3s;
+        }
+
+        .meaning-btn:hover {
+            color: var(--neon-pink);
+        }
+
+        .meaning-content {
+            display: none;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            background: rgba(255, 0, 153, 0.05);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: justify;
+        }
+
         /* --- HEADER --- */
         header {
             min-height: 90vh;
@@ -237,8 +279,6 @@
             object-fit: cover;
             margin-bottom: 20px;
             background: #222;
-
-            /* The Aesthetic Filter: High Contrast, Slightly Dimmed, Pink Glow */
             filter: grayscale(100%) blur(1px);
             transition: transform 0.5s ease;
         }
@@ -268,7 +308,7 @@
             transition: opacity 2s ease;
         }
 
-        /* --- INTERACTIVE ELEMENTS (General) --- */
+        /* --- INTERACTIVE ELEMENTS --- */
         .btn-group {
             display: flex;
             justify-content: center;
@@ -342,7 +382,7 @@
             font-size: 0.9rem;
         }
 
-        /* --- QUOTE GENERATOR STYLES --- */
+        /* --- QUOTE GENERATOR --- */
         .quote-btn {
             background: transparent;
             border: 1px solid var(--neon-blue);
@@ -493,7 +533,6 @@
             text-align: center;
             padding: 50px 20px;
             margin-top: 80px;
-            /* Dark gradient fade */
             background: linear-gradient(to top, rgba(15, 12, 41, 1), transparent);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             position: relative;
@@ -520,18 +559,12 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 800;
-            /* Gentle pulsing glow */
             animation: glowText 2s infinite alternate;
         }
 
         @keyframes glowText {
-            from {
-                text-shadow: 0 0 5px rgba(255, 0, 153, 0.2);
-            }
-
-            to {
-                text-shadow: 0 0 15px rgba(255, 0, 153, 0.8);
-            }
+            from { text-shadow: 0 0 5px rgba(255, 0, 153, 0.2); }
+            to { text-shadow: 0 0 15px rgba(255, 0, 153, 0.8); }
         }
 
         .funny-msg {
@@ -542,7 +575,6 @@
             max-width: 600px;
         }
 
-        /* Hover effect: turns bright cyan */
         .utopia-footer:hover .funny-msg {
             color: var(--neon-blue);
             text-shadow: 0 0 5px var(--neon-blue);
@@ -582,7 +614,6 @@
             transform: scale(1.05);
         }
 
-        /* Equalizer Animation (Bars moving) */
         .equalizer {
             display: flex;
             gap: 3px;
@@ -596,50 +627,33 @@
             animation: bounce 1s infinite ease-in-out;
         }
 
-        .bar:nth-child(1) {
-            animation-duration: 0.6s;
-            height: 6px;
-        }
+        .bar:nth-child(1) { animation-duration: 0.6s; height: 6px; }
+        .bar:nth-child(2) { animation-duration: 0.8s; height: 12px; }
+        .bar:nth-child(3) { animation-duration: 0.5s; height: 8px; }
+        .bar:nth-child(4) { animation-duration: 0.7s; height: 14px; }
 
-        .bar:nth-child(2) {
-            animation-duration: 0.8s;
-            height: 12px;
-        }
-
-        .bar:nth-child(3) {
-            animation-duration: 0.5s;
-            height: 8px;
-        }
-
-        .bar:nth-child(4) {
-            animation-duration: 0.7s;
-            height: 14px;
-        }
-
-        /* Pause animation when not playing */
         .paused .bar {
             animation-play-state: paused;
             height: 3px !important;
         }
 
+        .player-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .next-btn {
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
         @media (max-width: 600px) {
-            h1 {
-                font-size: 4rem;
-            }
-
-            section {
-                padding: 30px;
-                margin: 30px 0;
-            }
-
-            p {
-                text-align: left;
-            }
-
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
+            h1 { font-size: 4rem; }
+            section { padding: 30px; margin: 30px 0; }
+            p { text-align: left; }
+            .profile-img { width: 200px; height: 200px; }
         }
     </style>
 </head>
@@ -671,20 +685,31 @@
             </div>
 
             <div class="music-player-container">
-                <audio id="my-audio" loop>
+                <audio id="my-audio">
                     <source src="music/Darkhaast.mp3" type="audio/mp3">
                 </audio>
 
-                <button class="music-btn" onclick="toggleMusic()">
-                    <div id="equalizer" class="equalizer paused">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                    <span id="music-text">Play My Vibe</span>
-                </button>
+                <div class="player-row">
+                    <button class="music-btn" onclick="toggleMusic()">
+                        <div id="equalizer" class="equalizer paused">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                        <span id="music-text">Play My Vibe</span>
+                    </button>
+
+                    <button class="music-btn next-btn" onclick="nextSong()">
+                        ⏭
+                    </button>
+                </div>
+                
+                <small id="song-name-display" style="color:var(--neon-pink); opacity:0.8; margin-top:5px; font-size:0.8rem;">
+                    Track 1
+                </small>
             </div>
+            
         </header>
 
         <section class="reveal">
@@ -740,7 +765,7 @@
             </p>
             <p>
                 I’ve built my own system for happiness, blending self-care, empathy, honesty, and simple life policies
-                that help me navigate everything with purpose.
+                that help me navigate everything with purpose. I understand that <span class="highlight-text">kindness often comes with some sacrifice</span>, but it is a price I am willing to pay for peace.
             </p>
         </section>
 
@@ -755,6 +780,17 @@
                 I welcome everyone who values trust, care, and honest bonds, and I’m always ready to listen, share, and
                 connect.
             </p>
+        </section>
+
+        <section class="reveal" style="text-align: center;">
+            <h2>My Soul in Words</h2>
+            <p>Poems Written By Me</p>
+            
+            <button class="journal-btn" onclick="togglePoems()" id="poem-toggle-btn">
+                📖 Open My Poems
+            </button>
+
+            <div id="poems-container" style="display: none; margin-top: 30px;"></div>
         </section>
 
         <section class="reveal">
@@ -1238,7 +1274,81 @@
             }
         }
 
-        // 7. SCROLL REVEAL
+        // 7. POEMS CONFIGURATION
+        // ============================================
+        // ADD YOUR POEMS HERE (Just copy the block structure)
+        // ============================================
+        const myPoems = [
+            {
+                id: 1,
+                lines: `I was sad,
+sitting in the courtyard,
+feeling low in its pale light,
+embracing the thought of death,
+yet still trying to console others
+not to embrace death,
+not to become me.`,
+                meaning: "I am sad. I am sitting in the courtyard, and the pale light around me matches how low I feel inside. In that moment I am thinking about death, not because I want drama, but because my pain is heavy and close to me. Even while I am struggling with these thoughts, I am still trying to comfort other people. I don’t want them to move toward death the way my mind does. I don’t want anyone to become like me or feel what I am feeling now."
+            },
+            {
+                id: 2,
+                lines: `I suffer in darkness,
+shadows behind me,
+with an altruistic heart,
+dreaming of a quiet utopia,
+where everyone finds solace,
+where no one suffers like me,
+yet somehow I am left alone at last.`,
+                meaning: "I am suffering in darkness. The shadows behind me remind me of my pain and struggles. Even so, I have an altruistic heart I care for others deeply. I dream of a peaceful world, a quiet utopia, where everyone can find comfort and relief, where no one has to suffer the way I do. Despite all this hope and care I put into imagining or helping that world, I end up alone in the end."
+            },
+            {
+                id: 3,
+                lines: `It is painful to be misunderstood,
+But living alone is better than
+begging for a connection that isn't there.`,
+                meaning: "You feel that people don’t truly understand you, and that misunderstanding hurts. But instead of trying to force a connection with people who can’t see or value you, you’d rather be alone. Solitude, though sometimes lonely, feels safer and more honest than seeking acceptance that isn’t real."
+            }
+        ];
+
+        // POEM RENDER LOGIC
+        function togglePoems() {
+            const container = document.getElementById('poems-container');
+            const btn = document.getElementById('poem-toggle-btn');
+            
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                btn.innerText = '📖 Close My Poems';
+                // Render poems only if empty
+                if(container.innerHTML === "") {
+                    myPoems.forEach(poem => {
+                        container.innerHTML += `
+                            <div class="poem-box">
+                                <p class="poem-text">${poem.lines}</p>
+                                <span class="poem-sig">--- Harish</span>
+                                <button class="meaning-btn" onclick="toggleMeaning(${poem.id})">✨ Read Meaning</button>
+                                <div id="meaning-${poem.id}" class="meaning-content">
+                                    ${poem.meaning}
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+            } else {
+                container.style.display = 'none';
+                btn.innerText = '📖 Open My Poems';
+            }
+        }
+
+        function toggleMeaning(id) {
+            const content = document.getElementById(`meaning-${id}`);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        // 8. SCROLL REVEAL
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -1251,27 +1361,52 @@
             }
         }
 
-        // 8. MUSIC PLAYER LOGIC
-        function toggleMusic() {
-            const audio = document.getElementById("my-audio");
-            const equalizer = document.getElementById("equalizer");
-            const text = document.getElementById("music-text");
+        // 9. PLAYLIST LOGIC
+        const playlist = [
+            "music/Darkhaast.mp3",
+            "music/Hawayein.mp3",
+            "music/TenuSangRakhna.mp3",
+            "music/TumSeHi.mp3",
+        ];
 
+        let currentSongIndex = 0;
+        const audio = document.getElementById("my-audio");
+        const equalizer = document.getElementById("equalizer");
+        const playBtnText = document.getElementById("music-text");
+        const songNameDisplay = document.getElementById("song-name-display");
+
+        function toggleMusic() {
             if (audio.paused) {
                 audio.play();
                 equalizer.classList.remove("paused");
-                text.innerText = "Vibing...";
+                playBtnText.innerText = "Vibing...";
             } else {
                 audio.pause();
                 equalizer.classList.add("paused");
-                text.innerText = "Play My Vibe";
+                playBtnText.innerText = "Play My Vibe";
             }
         }
+
+        function nextSong() {
+            currentSongIndex++;
+            if (currentSongIndex >= playlist.length) {
+                currentSongIndex = 0;
+            }
+            audio.src = playlist[currentSongIndex];
+            songNameDisplay.innerText = "Track " + (currentSongIndex + 1);
+            audio.play();
+            equalizer.classList.remove("paused");
+            playBtnText.innerText = "Vibing...";
+        }
+
+        audio.onended = function() {
+            nextSong();
+        };
 
         window.addEventListener('DOMContentLoaded', () => {
             createStars();
             setTimeout(typeWriter, 1000);
-            loadEntries(); // Load journal
+            loadEntries(); 
             reveal();
         });
 
